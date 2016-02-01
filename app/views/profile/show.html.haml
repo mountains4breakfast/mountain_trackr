@@ -1,0 +1,23 @@
+%h3.center
+  Profile For
+  = current_user.email
+%hr
+
+.row
+  .col.s6
+    %h4.center
+      Total Mountains Climbed
+      %br
+      = current_user.mountains.count
+  .col.s6
+    %h4.center
+      All Users Mountains Climbed
+      %br
+      = @all_mountains.count
+      %hr
+      .center
+        %h5 Names
+        %ul
+          - @all_mountains.each do |mountain|
+            %li
+              = mountain.name

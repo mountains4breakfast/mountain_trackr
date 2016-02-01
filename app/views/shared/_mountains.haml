@@ -1,0 +1,19 @@
+- if @mountains.any?
+  .row
+    - @mountains.each do |mountain|
+      .col.s12.m4
+        .card
+          .card-image
+            %img.mountain-picture{:src => mountain.picture.url}
+              %span.card-title
+                = mountain.name
+          .card-content
+            %p.black-text
+              = mountain.notes
+          .card-action
+            = link_to "Show", mountain_path(mountain)
+            = link_to "Edit", edit_mountain_path(mountain)
+            = link_to "Delete", mountain_path(mountain), method: :delete, data: {confirm: 'Really delete this mountain?'}
+- else
+  %h5.center
+    No Mountains yet, Get climbing!

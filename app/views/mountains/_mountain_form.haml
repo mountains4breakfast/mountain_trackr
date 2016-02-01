@@ -1,0 +1,28 @@
+.container
+  = form_for @mountain do |f|
+    .input-field
+      = f.label :name
+      = f.text_field :name, required: true
+  
+    .input-field
+      = f.label :elevation
+      = f.text_field :elevation, required: true
+  
+    .input-field
+      = f.label :difficulty
+      = f.select :difficulty, (1..10).to_a
+  
+    .input-field
+      = f.label :distance
+      = f.text_field :distance
+
+    .input-field
+      = f.file_field :picture  
+  
+    .input-field
+      = f.label :notes
+      = f.text_area :notes, class: "materialize-textarea"
+
+    .center
+      = f.submit 'Save', class: "btn blue darken-4"
+      = link_to "Back", root_path, class: 'btn grey darken-2'

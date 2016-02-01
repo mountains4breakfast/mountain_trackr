@@ -1,0 +1,23 @@
+.container
+  .center
+    = link_to 'Dashboard', root_path, class: 'btn'
+  .row
+    .col.s12
+      .card
+        .card-image
+          %img{src: @mountain.picture.url}
+            %span.card-title
+              = @mountain.name
+        .card-content.black-text
+          %label Elevation:
+          %p 
+            = @mountain.elevation
+          %label Distance:
+          %p 
+            = @mountain.distance
+          %label Difficulty:
+          %p 
+            = @mountain.difficulty
+          %label Notes:
+          %p
+            = @mountain.notes
